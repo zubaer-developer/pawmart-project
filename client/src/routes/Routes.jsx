@@ -4,12 +4,13 @@ import Home from "../Pages/Home";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import PetsAndSupplies from "../Pages/PetsAndSupplies";
+import ErrorPage from "../Pages/ErrorPage";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <div>404 Page Not Found</div>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
