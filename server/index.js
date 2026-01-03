@@ -16,7 +16,12 @@ app.get("/", (req, res) => {
   res.send("PawMart Server is Running");
 });
 
-// listen port
-app.listen(port, () => {
-  console.log(`PawMart Server is running on Port: ${port}`);
-});
+// For local testing
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`PawMart Server is running on Port: ${port}`);
+  });
+}
+
+// For Vercel deployment
+module.exports = app;
